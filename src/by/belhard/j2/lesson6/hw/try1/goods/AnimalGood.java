@@ -1,4 +1,4 @@
-package by.belhard.j2.lesson6.hw.try1;
+package by.belhard.j2.lesson6.hw.try1.goods;
 
 public class AnimalGood extends AbstractGood {
 
