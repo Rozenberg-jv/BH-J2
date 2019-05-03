@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class Banking {
 
-	private final Map<String, Account> accounts = new HashMap<>();
+	private final Map<String, Account> accountsMap = new HashMap<>();
 
 	public Banking() {
 
@@ -18,22 +18,22 @@ public class Banking {
 
 	private void addAccount(String accountName, String password) {
 
-		if (accounts.containsKey(accountName))
+		if (accountsMap.containsKey(accountName))
 			throw new InvalidAccountNameException();
 
-		accounts.put(accountName, new Account(accountName, password));
+		accountsMap.put(accountName, new Account(accountName, password));
 	}
 
 	public void updateMoney(String accountName, int amount) {
 
-		Account account = accounts.get(accountName);
+		Account account = accountsMap.get(accountName);
 
 		account.setMoney(account.getMoney() + amount);
 	}
 
 	public void checkPassword(String accountName, String password) {
 
-		Account account = accounts.get(accountName);
+		Account account = accountsMap.get(accountName);
 
 		if (!account.checkPassword(password))
 			throw new InvalidPasswordException();
@@ -41,11 +41,11 @@ public class Banking {
 
 	public boolean isAccountExists(String accountName) {
 
-		return accounts.containsKey(accountName);
+        return accountsMap.containsKey(accountName);
 	}
 
 	public int getMoneyAmount(String accountName) {
 
-		return accounts.get(accountName).getMoney();
+		return accountsMap.get(accountName).getMoney();
 	}
 }

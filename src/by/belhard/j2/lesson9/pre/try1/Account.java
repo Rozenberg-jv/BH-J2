@@ -1,6 +1,5 @@
 package by.belhard.j2.lesson9.pre.try1;
 
-import by.belhard.j2.lesson9.pre.try1.exceptions.InvalidPasswordException;
 
 import java.util.Objects;
 
@@ -17,11 +16,6 @@ public class Account {
 		this.accountName = accountName;
 		this.password = password;
 		this.money = 0;
-	}
-
-	public String getAccountName() {
-
-		return accountName;
 	}
 
 	public void setMoney(int money) {
