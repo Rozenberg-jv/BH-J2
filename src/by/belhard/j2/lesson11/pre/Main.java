@@ -18,8 +18,18 @@ public class Main {
 
 		Statement statement = connection.createStatement();
 
-		ResultSet resultSet = statement
-				.executeQuery("select e.id as id, name, specialty, salary, date_of_employment as date from employees e join specialties s on (e.specialty_id = s.id) order by e.id;");
+		ResultSet resultSet = statement.executeQuery(
+				"select e.id as id, name, specialty, salary, date_of_employment as date from employees e join specialties s on (e.specialty_id = s.id) order by e.id;");
+
+		showList(resultSet);
+
+		int resultedRows = statement.executeUpdate("insert into employees values (null, 'Paul', null, 10, current_date);");
+		System.out.println(resultedRows + " was affected");
+
+		System.out.println("end");
+	}
+
+	private static void showList(ResultSet resultSet) throws SQLException {
 
 		while (resultSet.next()) {
 			int id = resultSet.getInt("id");
@@ -30,8 +40,6 @@ public class Main {
 
 			System.out.printf("%-2d) %-10s %-10s %5d  %5$td/%5$tM/%5$tY\n", id, name, specialty, salary, date);
 		}
-
-		System.out.println("end");
 	}
 
 }
