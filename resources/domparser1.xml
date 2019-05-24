@@ -1,0 +1,54 @@
+<flight>
+    <person id="1">
+        <name>Vasily</name>
+        <age>35</age>
+        <phones>
+            <phone>+456879</phone>
+            <phone>+321947</phone>
+        </phones>
+        <address>
+            <city>Minsk</city>
+            <street>Lobanka</street>
+            <house>31</house>
+            <apartments>11</apartments>
+        </address>
+        <weight>88</weight>
+    </person>
+
+    <baggage id="1">
+        <weight>65</weight>
+    </baggage>
+
+    <person id="2">
+        <age>18</age>
+        <address>
+            <city>Minsk</city>
+            <street>Nezavisimosti</street>
+            <house>112</house>
+            <apartments>28</apartments>
+        </address>
+        <name>Ilya</name>
+        <phones>
+            <phone>+579136</phone>
+        </phones>
+        <weight>65</weight>
+    </person>
+
+    <person id="3">
+        <name>Mary</name>
+        <age>26</age>
+        <address>
+            <city>Zhodino</city>
+            <street>Lenina</street>
+            <house>1</house>
+            <apartments>1</apartments>
+        </address>
+        <phones>
+        </phones>
+        <weight>58</weight>
+    </person>
+
+    <baggage id="3">
+        <weight>35</weight>
+    </baggage>
+</flight>

@@ -1,0 +1,33 @@
+{
+  "title": "Minsk",
+  "population": 1981690,
+  "districts": [
+    "Centralniy",
+    "Sovietsky",
+    "Pervomaisky",
+    "Partizansky",
+    "Zavodskoy",
+    "Leninsky",
+    "Oktiabrsky",
+    "Moskovsky",
+    "Frunzensky"
+  ],
+  "satellites": [
+    {
+      "title": "Fanipol",
+      "population": 16444
+    },
+    {
+      "title": "Logoysk",
+      "population": 13099
+    },
+    {
+      "title": "Zaslavl",
+      "population": 15661
+    },
+    {
+      "title": "Dzerzhinsk",
+      "population": 27839
+    }
+  ]
+}

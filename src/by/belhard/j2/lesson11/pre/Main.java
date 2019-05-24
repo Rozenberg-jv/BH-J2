@@ -17,14 +17,18 @@ public class Main {
 		Connection connection = DriverManager.getConnection(DB_URL, USER, PASSWORD);
 
 		Statement statement = connection.createStatement();
+		PreparedStatement preparedStatement = connection.prepareStatement("update employees set salary = salary + ? where name = ?;");
+		preparedStatement.setInt(1, 100);
+		preparedStatement.setString(2, "Chuck");
+		preparedStatement.executeUpdate();
 
 		ResultSet resultSet = statement.executeQuery(
 				"select e.id as id, name, specialty, salary, date_of_employment as date from employees e join specialties s on (e.specialty_id = s.id) order by e.id;");
 
-		showList(resultSet);
+		//		int resultedRows = statement.executeUpdate("insert into employees values (null, 'Paul', null, 10, current_date);");
+		//		System.out.println(resultedRows + " row(s) affected");
 
-		int resultedRows = statement.executeUpdate("insert into employees values (null, 'Paul', null, 10, current_date);");
-		System.out.println(resultedRows + " was affected");
+		showList(resultSet);
 
 		System.out.println("end");
 	}
