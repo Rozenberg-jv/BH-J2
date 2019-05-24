@@ -9,7 +9,8 @@ public class Satellite {
 	private long population;
 
 	@JsonCreator
-	public Satellite(@JsonProperty("title") String title, @JsonProperty("population") long population) {
+	public Satellite(@JsonProperty("title") String title,
+					 @JsonProperty("population") long population) {
 
 		this.title = title;
 		this.population = population;
@@ -21,23 +22,4 @@ public class Satellite {
 		return "\nSatellite [" + title + " : " + population + "]";
 	}
 
-	public String getTitle() {
-
-		return title;
-	}
-
-	public long getPopulation() {
-
-		return population;
-	}
-
-	public void setTitle(String title) {
-
-		this.title = title;
-	}
-
-	public void setPopulation(long population) {
-
-		this.population = population;
-	}
 }

@@ -2,7 +2,6 @@ package by.belhard.j2.lesson11.les;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Main {
@@ -11,7 +10,7 @@ public class Main {
     private static final String USER = "root";
     private static final String PASSWORD = "root";
     private static final String URL =
-            "jdbc:mysql://127.0.0.1:3306/company?serverTimezone=UTC";
+            "jdbc:mysql://localhost:3306/company?serverTimezone=UTC";
 
     public static void main(String[] args) {
 
@@ -50,6 +49,18 @@ public class Main {
                 /*System.out.printf("%-2d) %-10s %-10s %5d  %5$td/%5$tm/%5$tY\n",
                         id, name, specialty, salary, date);*/
             }
+
+//            query = "update employees set (salary = salary + ?) where salary < ?;";
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("update employees set salary = salary + ? where name = ?;");
+
+            int delta = 100;
+            String nameIn = "'Victor'; insert into employees values (null, 'Maxim', 1, 1000000, default); commit();";
+
+            preparedStatement.setInt(1, delta);
+            preparedStatement.setString(2, nameIn);
+
+            preparedStatement.execute();
 
         } catch (SQLException e) {
             e.printStackTrace();

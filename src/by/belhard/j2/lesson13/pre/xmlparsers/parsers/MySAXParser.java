@@ -37,7 +37,7 @@ public class MySAXParser extends DefaultHandler implements MyXmlParser {
      */
     @Override
     public void startDocument() throws SAXException {
-//        result.append(" - Начинаем разбор документа - \n");
+        result.append(" - Начинаем разбор документа - \n");
     }
 
     /**
@@ -141,6 +141,6 @@ public class MySAXParser extends DefaultHandler implements MyXmlParser {
 
     @Override
     public void endDocument() throws SAXException {
-//        result.append(" - Закончили разбор документа - ");
+        result.append(" - Закончили разбор документа - ");
     }
 }

@@ -13,7 +13,9 @@ public class City {
 	private List<Satellite> satellites;
 
 	@JsonCreator
-	public City(@JsonProperty("title") String title, @JsonProperty("population") long population, @JsonProperty("districts") List<String> districts,
+	public City(@JsonProperty("title") String title,
+				@JsonProperty("population") long population,
+				@JsonProperty("districts") List<String> districts,
 				@JsonProperty("satellites") List<Satellite> satellites) {
 
 		this.title = title;

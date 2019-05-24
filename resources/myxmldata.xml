@@ -7,7 +7,7 @@
         <to>Igor</to>
         <comment>comment 1</comment>
         <comment>comment 2</comment>
-        <amount currency="USD">100</amount>
+        <amount currency="USD" version="">100</amount>
     </transaction>
 
     <transaction>

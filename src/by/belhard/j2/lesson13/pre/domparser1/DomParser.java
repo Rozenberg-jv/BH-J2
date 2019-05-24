@@ -55,17 +55,21 @@ public class DomParser {
                     List<String> phones = new ArrayList<>();
                     int weight;
 
-                    name = personElement.getElementsByTagName("name").item(0).getChildNodes().item(0).getNodeValue();
+                    name = personElement.getElementsByTagName("name").item(0)
+                            .getChildNodes().item(0).getNodeValue();
                     age = Integer.parseInt(personElement.getElementsByTagName("age").item(0)
                             .getChildNodes().item(0).getNodeValue());
 
-                    NodeList addressNode = personElement.getElementsByTagName("address").item(0).getChildNodes();
-                    city = ((Element) addressNode).getElementsByTagName("city").item(0).getChildNodes().item(0).getNodeValue();
+                    NodeList addressNode = personElement.getElementsByTagName("address")
+                            .item(0).getChildNodes();
+                    city = ((Element) addressNode).getElementsByTagName("city").item(0)
+                            .getChildNodes().item(0).getNodeValue();
                     street = ((Element) addressNode).getElementsByTagName("street").item(0)
                             .getChildNodes().item(0).getNodeValue();
                     house = ((Element) addressNode).getElementsByTagName("house").item(0)
                             .getChildNodes().item(0).getNodeValue();
-                    apartments = ((Element) addressNode).getElementsByTagName("apartments").item(0)
+                    apartments = ((Element) addressNode).getElementsByTagName("apartments")
+                            .item(0)
                             .getChildNodes().item(0).getNodeValue();
 
                     NodeList phonesNodes = personElement.getElementsByTagName("phones").item(0).getChildNodes();
@@ -84,8 +88,8 @@ public class DomParser {
                 } else if (element.getTagName().equals("baggage")) {
                     NodeList baggageTag = node.getChildNodes();
                     Element baggageElement = (Element) baggageTag;
-                    int weight = Integer.parseInt(baggageElement.getElementsByTagName("weight").item(0)
-                            .getChildNodes().item(0).getNodeValue());
+                    int weight = Integer.parseInt(baggageElement.getElementsByTagName("weight")
+                            .item(0).getChildNodes().item(0).getNodeValue());
                     addBaggageWeightToPerson(id, weight, persons);
                 }
             }

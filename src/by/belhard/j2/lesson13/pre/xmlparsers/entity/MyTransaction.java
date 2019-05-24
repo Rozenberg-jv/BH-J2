@@ -28,7 +28,9 @@ public class MyTransaction {
 	@Override
 	public String toString() {
 
-		return "\t[id: #" + id + ", status: " + status + (status == Statuses.FAILED ? "(" + reason + ")" : "") + ", from: '" + from + "', to: '" + to + "', comment: \"" + comments
+		return "\t[id: #" + id + ", status: " + status +
+				(status == Statuses.FAILED ? "(" + reason + ")" : "")
+				+ ", from: '" + from + "', to: '" + to + "', comment: \"" + comments
 				+ "\"" + ", amount: " + amount + " " + currency + "]";
 	}
 }
